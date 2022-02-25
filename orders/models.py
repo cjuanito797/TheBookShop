@@ -17,7 +17,7 @@ class Order (models.Model):
         blank=True,
         editable=False,
         unique=True,
-        default=create_ref_number ( )
+        default=create_ref_number
     )
 
     user = models.ForeignKey (User,
