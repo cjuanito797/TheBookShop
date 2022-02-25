@@ -1,5 +1,4 @@
 import random
-
 from django.db import models
 from accounts.models import User
 from library.models import Book
