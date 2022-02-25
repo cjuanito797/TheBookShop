@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
     'library.apps.LibraryConfig',
+    'orders.apps.OrdersConfig',
     'rest_framework',
     'corsheaders'
 ]
