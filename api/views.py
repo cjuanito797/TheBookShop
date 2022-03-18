@@ -1,12 +1,9 @@
 from rest_framework import status
 from rest_framework.decorators import api_view
-from django.views.decorators.csrf import csrf_exempt
 from .serializers import *
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from library.models import *
 
-@csrf_exempt
 @api_view(['GET', 'POST'])
 def book_list(request):
     if request.method == 'GET':
