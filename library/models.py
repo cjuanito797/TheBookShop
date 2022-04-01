@@ -46,9 +46,11 @@ class Book (models.Model):
     genre = models.ForeignKey (Genre,
                                related_name='books',
                                on_delete=models.CASCADE)
+
     author = models.ForeignKey (Author,
                                 related_name='books',
                                 on_delete=models.CASCADE)
+
     title = models.CharField (max_length=50, db_index=True)
     summary = models.TextField (blank=True)
     price = models.DecimalField (max_digits=10, decimal_places=2)
@@ -64,3 +66,16 @@ class Book (models.Model):
     def get_absolute_url(self):
         return reverse ('Library:book_detail',
                         args=[self.id, self.slug])
+
+# Create your models here.
+class Task(models.Model):
+    #title
+    title = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True) #description
+    completed = models.BooleanField(default=False)
+    #completed
+    created_at = models.DateTimeField(auto_now_add=True) #created_at
+
+    def __str__(self):
+        #return the task title
+        return self.title

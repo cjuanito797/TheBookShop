@@ -13,6 +13,9 @@ import os
 import datetime
 from pathlib import Path
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,7 +30,7 @@ SECRET_KEY = 'django-insecure-m6k7_e3t+7@8@t!a3c71un=mhgnpmv%=$!=fwkll!l-+qs2d4$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -157,9 +160,4 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
 }
 
-CORS_ORIGIN_WHITELIST = (
-    'https://localhost:8080',
-    'https://127.0.0.1:8080'
-)
 
-CORS_ORIGIN_ALLOW_ALL = True

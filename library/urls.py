@@ -5,6 +5,10 @@ from . import views
 
 app_name = 'library'
 
+from django.urls import path
+from . import views
+# define the urls
 urlpatterns = [
-    path('', views.home, name='home')
+    path('tasks/', views.tasks),
+    path('tasks/<int:pk>/', views.task_detail),
 ]
